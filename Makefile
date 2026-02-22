@@ -4,7 +4,7 @@ CFLAGS	= -Wall -Wextra -Werror
 RM		= rm -f
 
 SRC		= 
-OBJS	= $(SRCS:.c=.o)
+OBJS	= $(SRC:.c=.o)
 HEADER	= 
 
 all:$(NAME)
@@ -23,4 +23,7 @@ fclean:clean
 
 re:fclean all
 
-.PHONY:all clean fclean re	
+norminette:
+	@norminette $(SRC) $(HEADER) | grep -Ev "INVALID_HEADER|VARIABLE_NAMING_CONV" || true
+
+.PHONY:all clean fclean re norminette
