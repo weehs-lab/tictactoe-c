@@ -20,5 +20,17 @@
 
 int	initialize_board(tictactoe *object)
 {
+	int	x;
+	int	y;
+
+	x = 0;
+	y = 0;
+	while (x < 3)
+	{
+		while (y < 3)
+		{
+			object->board[x][y] = ' ';
+		}
+	}
 	return (0);
 }
