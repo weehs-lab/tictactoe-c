@@ -22,4 +22,4 @@ typedef struct tictactoe
 	char	board[3][3];
 }	tictactoe;
 
-int	initialize_board(tictactoe object);
+int	initialize_board(tictactoe *object);

@@ -18,7 +18,7 @@
 #include <stdio.h>
 #include "tictactoe.h"
 
-int	initialize_board(tictactoe object)
+int	initialize_board(tictactoe *object)
 {
 	return (0);
 }
