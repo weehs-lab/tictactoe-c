@@ -1,15 +1,17 @@
 # tictactoe-c
 
----
-
 ## Table of Contents
+
 [Introduction](#introduction)
+
 [How to Use](#how-to-use)
+
 [Compilation](#compilation)
+
 [Notes](#notes)
+
 [License](#license)
 
----
 ## Introduction
 
 This tic-tac-toe program is fully written in C as a practice for my C
