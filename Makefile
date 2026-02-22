@@ -5,7 +5,7 @@ RM		= rm -f
 
 SRC		= 
 OBJS	= $(SRC:.c=.o)
-HEADER	= 
+HEADER	= tictactoe.h
 
 all:$(NAME)
 
@@ -24,6 +24,6 @@ fclean:clean
 re:fclean all
 
 norminette:
-	@norminette $(SRC) $(HEADER) | grep -Ev "INVALID_HEADER|VARIABLE_NAMING_CONV" || true
+	@norminette $(SRC) $(HEADER) | grep -Ev "INVALID_HEADER|GLOBAL_VAR_NAMING|USER_DEFINED_TYPEDEF" || true
 
 .PHONY:all clean fclean re norminette
