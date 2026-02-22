@@ -18,7 +18,7 @@
 #include <stdio.h>
 #include "tictactoe.h"
 
-int	initialize_board(tictactoe *object)
+void	initialize_board(tictactoe *object)
 {
 	int	x;
 	int	y;
@@ -32,5 +32,4 @@ int	initialize_board(tictactoe *object)
 			object->board[x][y] = ' ';
 		}
 	}
-	return (0);
 }
