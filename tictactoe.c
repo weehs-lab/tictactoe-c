@@ -1,5 +1,3 @@
-#pragma once
-
 /* tictactoe-c
  * Copyright (C) 2026 weehs
  * 
@@ -17,9 +15,10 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-typedef struct tictactoe
-{
-	char	board[3][3];
-}	tictactoe;
+#include <stdio.h>
+#include "tictactoe.h"
 
-int	initialize_board(tictactoe object);
+int	initialize_board(tictactoe object)
+{
+	return (0);
+}

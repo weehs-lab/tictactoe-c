@@ -3,7 +3,7 @@ CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
 RM		= rm -f
 
-SRC		= 
+SRC		= tictactoe.c
 OBJS	= $(SRC:.c=.o)
 HEADER	= tictactoe.h
 
