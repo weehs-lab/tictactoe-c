@@ -65,7 +65,7 @@ int	set_position(tictactoe *object,
 	return (0);
 }
 
-int	get_position(tictactoe *object,
+int	get_position(const tictactoe *object,
 			char *player,
 			int x,
 			int y)
