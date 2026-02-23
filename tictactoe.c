@@ -65,7 +65,7 @@ int	set_position(tictactoe *object,
 	return (0);
 }
 
-int	get_position(tictactoe *object,
+int	get_position(const tictactoe *object,
 			char *player,
 			int x,
 			int y)
@@ -75,5 +75,26 @@ int	get_position(tictactoe *object,
 		return (-1);
 	}
 	*player = object->board[y][x];
+	return (0);
+}
+
+int	draw_board(const tictactoe *object)
+{
+	int		y;
+
+	y = 0;
+	if (object == NULL)
+	{
+		return (-1);
+	}
+	printf ("    0  1  2  X\n");
+	while (y < 3)
+	{
+		printf ("%d [%c][%c][%c]\n",
+			y,
+			object->board[y][0],
+			object->board[y][1],
+			object->board[y][2]);
+	}
 	return (0);
 }
