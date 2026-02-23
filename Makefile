@@ -3,9 +3,9 @@ CC		= cc
 CFLAGS	= -Wall -Wextra -Werror -g
 RM		= rm -f
 
-SRC		= tictactoe.c interface.c main.c
+SRC		= tictactoe.c interface.c utility.c main.c
 OBJS	= $(SRC:.c=.o)
-HEADER	= tictactoe.h interface.h
+HEADER	= tictactoe.h interface.h utility.h
 
 all:$(NAME)
 

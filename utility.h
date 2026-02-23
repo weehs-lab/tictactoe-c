@@ -1,3 +1,5 @@
+#pragma once
+
 /* [PROJECT]
  * Copyright (C) 2026 weehs
  * 
@@ -15,26 +17,5 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "interface.h"
-
-int	main(void)
-{
-	tictactoe	*object;
-	int			i;
-	char		player;
-
-	i = 0;
-	player = 'X';
-	object = initialize_board ();
-	while (i < 9)
-	{
-		if (input (object, &player) == 0)
-		{
-			player = (char)(167 - (int)(player));
-			i = i + 1;
-			if (results (object) == 0)
-				return (0);
-		}
-	}
-	return (0);
-}
+char	row_same(const char board[3][3]);
+char	cross_same(const char board[3][3]);

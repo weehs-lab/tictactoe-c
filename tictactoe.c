@@ -18,6 +18,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "tictactoe.h"
+#include "utility.h"
 
 struct	tictactoe
 {
@@ -33,7 +34,7 @@ tictactoe	*initialize_board(void)
 
 	x = 0;
 	y = 0;
-	object = malloc (sizeof (tictactoe));
+	object = (tictactoe *)(malloc (sizeof (tictactoe)));
 	while (x < 3)
 	{
 		while (y < 3)
@@ -54,11 +55,12 @@ int	set_position(tictactoe *object,
 {
 	if (object == NULL || player == NULL)
 		return (-1);
-	if (*player != ('O' || 'X'))
+	if ((*player != 'O') && (*player != 'X'))
 		return (-2);
 	if (x < 0 || x > 2 || y < 0 || y > 2)
 		return (-3);
 	object->board[y][x] = *player;
+	object->turn_count = object->turn_count + 1;
 	return (0);
 }
 
@@ -93,28 +95,13 @@ int	draw_board(const tictactoe *object)
 
 char	judge(const tictactoe *object)
 {
-	int		row;
-
-	row = 0;
 	if (object == NULL)
 		return ('E');
-	while (row < 3)
-	{
-		if (object->board[row][0] == object->board[row][1] &&
-			object->board[row][1] == object->board[row][2])
-			return (object->board[row][0]);
-		if (object->board[0][row] == object->board[1][row] &&
-			object->board[1][row] == object->board[2][row])
-			return (object->board[0][row]);
-		row = row + 1;
-	}
-	if (object->board[0][0] == object->board[1][1] &&
-		object->board[1][1] == object->board[2][2])
-		return (object->board[0][0]);
-	if (object->board[2][0] == object->board[1][1] &&
-		object->board[1][1] == object->board[0][2])
-		return (object->board[1][1]);
-	if (object->turn_count == 9)
+	else if (row_same (object->board) != 'C')
+		return (row_same (object->board));
+	else if (cross_same (object->board) != 'C')
+		return (cross_same (object->board));
+	else if (object->turn_count == 9)
 		return ('D');
 	else
 		return ('C');

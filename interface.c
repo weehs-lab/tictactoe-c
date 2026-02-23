@@ -27,23 +27,22 @@ int	input(tictactoe *object, char *player)
 	draw_board (object);
 	printf ("Player %c's turn (Enter coordinates in form of \"x y\": ",
 		*player);
-	if ((scanf ("%d %d", &x, &y)) != 2)
+	if (scanf ("%d %d", &x, &y) == 2)
+	{
+		if ((x < 0 || x > 2 || y < 0 || y > 2) || get_position (object,
+				x, y) != ' ')
+		{
+			fprintf (stderr, "ERROR: Invalid coordinates!\n");
+			return (-2);
+		}
+		set_position (object, player, x, y);
+		return (0);
+	}
+	else
 	{
 		fprintf (stderr, "ERROR: Invalid coordinates!\n");
 		return (-2);
 	}
-	if (x < 0 || x > 2 || y < 0 || y > 2)
-	{
-		fprintf (stderr, "ERROR: Invalid coordinates!\n");
-		return (-2);
-	}
-	if (get_position (object, x, y) != ' ')
-	{
-		fprintf (stderr, "ERROR: Space occupied!\n");
-		return (-2);
-	}
-	set_position (object, player, x, y);
-	return (0);
 }
 
 int	results(tictactoe *object)
@@ -51,6 +50,7 @@ int	results(tictactoe *object)
 	char	result;
 
 	result = judge (object);
+	draw_board (object);
 	if (result == 'E' || result == 'C')
 		return (-1);
 	else if (result == 'D')
