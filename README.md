@@ -51,7 +51,7 @@ would implement).
 | `clean` | Removes all object files. |
 | `fclean` | Removes all object files and the binary executable. |
 | `re` | Combination of `fclean` and `all`, meaning it recompiles everything. |
-| `norminette` | Conducts Norm check. Requires the official [Norminette](2). |
+| `norminette` | Conducts Norm check. Requires the official [Norminette][2]. |
 
 ## License
 
