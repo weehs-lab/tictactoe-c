@@ -1,6 +1,6 @@
 NAME	= tictactoe-c
 CC		= cc
-CFLAGS	= -Wall -Wextra -Werror -g
+CFLAGS	= -Wall -Wextra -Werror -O3
 RM		= rm -f
 
 SRC		= tictactoe.c interface.c utility.c main.c
