@@ -86,30 +86,30 @@ int	draw_board(const tictactoe *object)
 	return (0);
 }
 
-char	judge(const tictactoe *object)
+int	judge(const tictactoe *object)
 {
 	int		row;
 
 	row = 0;
 	if (object == NULL)
-		return ('E');
+		return (-1);
 	while (row < 3)
 	{
 		if (object->board[row][0] == object->board[row][1] &&
 			object->board[row][1] == object->board[row][2])
-			return (object->board[row][0]);
+			return (1);
 		if (object->board[0][row] == object->board[1][row] &&
 			object->board[1][row] == object->board[2][row])
-			return (object->board[0][row]);
+			return (1);
 	}
 	if (object->board[0][0] == object->board[1][1] &&
 		object->board[1][1] == object->board[2][2])
-		return (object->board[0][0]);
+		return (1);
 	if (object->board[2][0] == object->board[1][1] &&
 		object->board[1][1] == object->board[0][2])
-		return (object->board[1][1]);
+		return (1);
 	if (object->turn_count == 9)
-		return ('D');
+		return (2);
 	else
-		return ('P');
+		return (0);
 }
