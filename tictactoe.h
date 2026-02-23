@@ -17,9 +17,6 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-typedef struct tictactoe
-{
-	char	board[3][3];
-}	tictactoe;
+typedef struct tictactoe	tictactoe;
 
-void	initialize_board(tictactoe *object);
+void						initialize_board(tictactoe *object);

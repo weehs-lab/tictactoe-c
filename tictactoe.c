@@ -18,10 +18,15 @@
 #include <stdio.h>
 #include "tictactoe.h"
 
+struct	tictactoe
+{
+	char	board[3][3];
+};
+
 void	initialize_board(tictactoe *object)
 {
-	int	x;
-	int	y;
+	int		x;
+	int		y;
 
 	x = 0;
 	y = 0;
