@@ -64,3 +64,16 @@ int	set_position(tictactoe *object,
 	object->board[y][x] = *player;
 	return (0);
 }
+
+int	get_position(tictactoe *object,
+			char *player,
+			int x,
+			int y)
+{
+	if (object == NULL || player == NULL)
+	{
+		return (-1);
+	}
+	*player = object->board[y][x];
+	return (0);
+}

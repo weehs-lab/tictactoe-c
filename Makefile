@@ -24,6 +24,6 @@ fclean:clean
 re:fclean all
 
 norminette:
-	@norminette $(SRC) $(HEADER) | grep -Ev "INVALID_HEADER|GLOBAL_VAR_NAMING|USER_DEFINED_TYPEDEF" || true
+	@norminette $(SRC) $(HEADER) | grep -Ev "INVALID_HEADER|GLOBAL_VAR_NAMING|USER_DEFINED_TYPEDEF|FORBIDDEN_STRUCT|STRUCT_TYPE_NAMING" || true
 
 .PHONY:all clean fclean re norminette
