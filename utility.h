@@ -17,5 +17,8 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
+#include <stdio.h>
+
 char	row_same(const char board[3][3]);
 char	cross_same(const char board[3][3]);
+void	clear_stdin_buffer(void);

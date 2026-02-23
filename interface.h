@@ -20,7 +20,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "tictactoe.h"
+#include "utility.h"
 
 int		input(tictactoe *object, char *player);
 int		results(tictactoe *object);
-void	clean(tictactoe *object);
+void	clean(tictactoe **object);

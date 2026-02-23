@@ -49,3 +49,12 @@ char	cross_same(const char board[3][3])
 		return (board[1][1]);
 	return ('C');
 }
+
+void	clear_stdin_buffer(void)
+{
+	int	count;
+
+	count = getchar ();
+	while (count != '\n' && count != EOF)
+		count = getchar ();
+}

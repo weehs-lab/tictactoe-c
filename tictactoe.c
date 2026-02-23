@@ -34,7 +34,7 @@ tictactoe	*initialize_board(void)
 
 	x = 0;
 	y = 0;
-	object = (tictactoe *)(malloc (sizeof (tictactoe)));
+	object = (tictactoe *)(calloc (1, sizeof (tictactoe)));
 	while (x < 3)
 	{
 		while (y < 3)

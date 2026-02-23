@@ -41,6 +41,7 @@ int	input(tictactoe *object, char *player)
 	else
 	{
 		fprintf (stderr, "ERROR: Invalid coordinates!\n");
+		clear_stdin_buffer ();
 		return (-2);
 	}
 }
@@ -50,31 +51,31 @@ int	results(tictactoe *object)
 	char	result;
 
 	result = judge (object);
-	draw_board (object);
 	if (result == 'E' || result == 'C')
 		return (-1);
-	else if (result == 'D')
+	draw_board (object);
+	if (result == 'D')
 	{
 		printf ("Draw\n");
-		clean (object);
+		clean (&object);
 		return (0);
 	}
 	else if (result == 'O')
 	{
 		printf ("Player O is the winner\n");
-		clean (object);
+		clean (&object);
 		return (0);
 	}
 	else
 	{
 		printf ("Player X is the winner\n");
-		clean (object);
+		clean (&object);
 		return (0);
 	}
 }
 
-void	clean(tictactoe *object)
+void	clean(tictactoe **object)
 {
-	free (object);
-	object = NULL;
+	free (*object);
+	*object = NULL;
 }
