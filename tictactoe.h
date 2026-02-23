@@ -28,3 +28,4 @@ int							get_position(const tictactoe *object,
 								char *player,
 								int x,
 								int y);
+int							draw_board(const tictactoe *object);
