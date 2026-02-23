@@ -1,6 +1,6 @@
 #pragma once
 
-/* tictactoe-c
+/* [PROJECT]
  * Copyright (C) 2026 weehs
  * 
  * This program is free software; you can redistribute it and/or modify
@@ -17,15 +17,5 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-typedef struct tictactoe	tictactoe;
-
-tictactoe					*initialize_board(void);
-int							set_position(tictactoe *object,
-								char *player,
-								int x,
-								int y);
-char						get_position(const tictactoe *object,
-								int x,
-								int y);
-int							draw_board(const tictactoe *object);
-char						judge(const tictactoe *object);
+char	row_same(const char board[3][3]);
+char	cross_same(const char board[3][3]);

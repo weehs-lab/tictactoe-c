@@ -1,6 +1,4 @@
-#pragma once
-
-/* tictactoe-c
+/* [PROJECT]
  * Copyright (C) 2026 weehs
  * 
  * This program is free software; you can redistribute it and/or modify
@@ -17,15 +15,26 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-typedef struct tictactoe	tictactoe;
+#include "interface.h"
 
-tictactoe					*initialize_board(void);
-int							set_position(tictactoe *object,
-								char *player,
-								int x,
-								int y);
-char						get_position(const tictactoe *object,
-								int x,
-								int y);
-int							draw_board(const tictactoe *object);
-char						judge(const tictactoe *object);
+int	main(void)
+{
+	tictactoe	*object;
+	int			i;
+	char		player;
+
+	i = 0;
+	player = 'X';
+	object = initialize_board ();
+	while (i < 9)
+	{
+		if (input (object, &player) == 0)
+		{
+			player = (char)(167 - (int)(player));
+			i = i + 1;
+			if (results (object) == 0)
+				return (0);
+		}
+	}
+	return (0);
+}

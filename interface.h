@@ -17,15 +17,10 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-typedef struct tictactoe	tictactoe;
+#include <stdio.h>
+#include <stdlib.h>
+#include "tictactoe.h"
 
-tictactoe					*initialize_board(void);
-int							set_position(tictactoe *object,
-								char *player,
-								int x,
-								int y);
-char						get_position(const tictactoe *object,
-								int x,
-								int y);
-int							draw_board(const tictactoe *object);
-char						judge(const tictactoe *object);
+int		input(tictactoe *object, char *player);
+int		results(tictactoe *object);
+void	clean(tictactoe *object);
