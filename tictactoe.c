@@ -23,13 +23,17 @@ struct	tictactoe
 	char	board[3][3];
 };
 
-void	initialize_board(tictactoe *object)
+int	initialize_board(tictactoe *object)
 {
 	int		x;
 	int		y;
 
 	x = 0;
 	y = 0;
+	if (object == NULL)
+	{
+		return (-1);
+	}
 	while (x < 3)
 	{
 		while (y < 3)
@@ -37,4 +41,39 @@ void	initialize_board(tictactoe *object)
 			object->board[x][y] = ' ';
 		}
 	}
+	return (0);
+}
+
+int	set_position(tictactoe *object,
+			char *player,
+			int x,
+			int y)
+{
+	if (object == NULL || player == NULL)
+	{
+		return (-1);
+	}
+	if (*player != ('O' || 'X'))
+	{
+		return (-2);
+	}
+	if (x < 0 || x > 2 || y < 0 || y > 2)
+	{
+		return (-3);
+	}
+	object->board[y][x] = *player;
+	return (0);
+}
+
+int	get_position(tictactoe *object,
+			char *player,
+			int x,
+			int y)
+{
+	if (object == NULL || player == NULL)
+	{
+		return (-1);
+	}
+	*player = object->board[y][x];
+	return (0);
 }

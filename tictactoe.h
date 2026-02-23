@@ -19,4 +19,12 @@
 
 typedef struct tictactoe	tictactoe;
 
-void						initialize_board(tictactoe *object);
+int							initialize_board(tictactoe *object);
+int							set_position(tictactoe *object,
+								char *player,
+								int x,
+								int y);
+int							get_position(tictactoe *object,
+								char *player,
+								int x,
+								int y);
