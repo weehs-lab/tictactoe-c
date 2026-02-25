@@ -45,6 +45,7 @@ tictactoe	*initialize_board(void)
 		x = x + 1;
 		y = 0;
 	}
+	printf ("\x1b[H\x1b[2J");
 	return (object);
 }
 
@@ -61,6 +62,7 @@ int	set_position(tictactoe *object,
 		return (-3);
 	object->board[y][x] = *player;
 	object->turn_count = object->turn_count + 1;
+	printf ("\x1b[H\x1b[J");
 	return (0);
 }
 
@@ -80,16 +82,17 @@ int	draw_board(const tictactoe *object)
 	y = 0;
 	if (object == NULL)
 		return (-1);
-	printf ("   0  1  2  X\n");
+	printf ("    0  1  2  X\n");
 	while (y < 3)
 	{
-		printf ("%d [%c][%c][%c]\n",
+		printf (" %d [%c][%c][%c]\n",
 			y,
 			object->board[y][0],
 			object->board[y][1],
 			object->board[y][2]);
 		y = y + 1;
 	}
+	printf (" Y\n");
 	return (0);
 }
 
