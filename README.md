@@ -56,7 +56,7 @@ would implement).
 ## License
 
 This project is licensed under the GNU General Public License v3.0 - see the
-COPYING file for details.
+[COPYING](COPYING) file for details.
 
 [1]: https://github.com/weehs-lab/tictactoe
 [2]: https://github.com/42school/norminette
