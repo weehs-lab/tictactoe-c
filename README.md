@@ -21,10 +21,10 @@ using `vim`.
 
 ## How to Use
 
-1. It will show up with player A first.
+1. It will show up with player X first.
 2. Write your position in form of (x y).
-3. It will repeat step 1 and 2 but for player B.
-4. The game continues until draw or either player A or B wins.
+3. It will repeat step 1 and 2 but for player O.
+4. The game continues until draw or either player X or O wins.
 
 ## Compilation
 
